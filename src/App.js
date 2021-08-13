@@ -43,10 +43,10 @@ const App = () => {
 
   return (
     data && <StyledDiv type ={theme} >
-      {error && <h1>Oops, something unexpected happened! {error}</h1>}
-      <StyledH1 type={theme} >REACT WARS</StyledH1>
-      {data.map( (item, index) => <Character showCharacter={showCharacter} key={index} character={character} type={theme} data={data} name={item.name} birthYear={item['birth_year']} height={item.height} gender={item.gender} mass={item.mass} hairColor={item.hair_color} skinColor={item.skin_color} eyeColor={item.eye_color} />)}
-    </StyledDiv>
+              {error && <h1>Oops, something unexpected happened! {error}</h1>}
+              <StyledH1 type={theme} >REACT WARS</StyledH1>
+              {data.map( (item, index) => <Character showCharacter={showCharacter} key={index} character={character} type={theme} data={data} name={item.name} birthYear={item['birth_year']} height={item.height} gender={item.gender} mass={item.mass} hairColor={item.hair_color} skinColor={item.skin_color} eyeColor={item.eye_color} />)}
+            </StyledDiv>
   );
 }
 
