@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 const StyledDiv = styled.div`
@@ -7,7 +7,15 @@ const StyledDiv = styled.div`
     flex-flow: row wrap;
     align-items: center;
     justify-content: space-evenly;
-    background-color: red;
+    background-color: 
+        ${props => props.type === 'materialDark' ? props.theme.materialDark : null}
+        ${props => props.type === 'regular' ? props.theme.regular : null}
+    ;
+    
+    color:
+        ${props => props.type === 'materialDark' ? props.theme.materialGray : null}
+        ${props => props.type === 'regular' ? props.theme.regularBlack : null}
+    ;
 
     h3 {
         margin: 0px 10px;
