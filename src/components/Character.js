@@ -13,50 +13,50 @@ const Character = (props) => {
 
     }
 
-    const StyledDiv = styled.div`
-        width: 75vw; height: ${detailsActive ? '40vh': '10vh'};
-        margin: ${detailsActive ? '20px' : '10px'};
-        display: flex;
-        flex-flow: column nowrap;
-        align-items: center;
-        justify-content: flex-start;
+const StyledDiv = styled.div`
+    width: 75vw; height: ${detailsActive ? '40vh': '10vh'};
+    margin: ${detailsActive ? '20px' : '10px'};
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 25px;
+    color:
+        ${props => props.type === 'materialDark' ? props.theme.materialGray : null}
+        ${props => props.type === 'regular' ? props.theme.regularBlack : null}
+    ;
+    background-color: 
+        ${props => props.type === 'materialDark' ? props.theme.materialDark : null}
+        ${props => props.type === 'regular' ? props.theme.regularBrown : null}
+    ;
+
+    h2 {
+        margin: 10px 0px 10px 0px;
+    }
+
+    button {
+        border: none;
         border-radius: 25px;
+        margin-bottom: 5px;
+        box-shadow:
+            ${props => props.type === 'materialDark' ? props.theme.materialBoxShadow : null}
+            ${props => props.type === 'regular' ? props.theme.regularBoxShadow : null}
+        ;
+        background-color: 
+            ${props => props.type === 'materialDark' ? props.theme.materialCyan : null}
+            ${props => props.type === 'regular' ? props.theme.regularTitle : null}
+        ;
         color:
             ${props => props.type === 'materialDark' ? props.theme.materialGray : null}
             ${props => props.type === 'regular' ? props.theme.regularBlack : null}
         ;
-        background-color: 
-            ${props => props.type === 'materialDark' ? props.theme.materialDark : null}
-            ${props => props.type === 'regular' ? props.theme.regularBrown : null}
-        ;
-
-        h2 {
-            margin: 10px 0px 10px 0px;
-        }
-
-        button {
-            border: none;
-            border-radius: 25px;
-            margin-bottom: 5px;
+        &:hover {
             box-shadow:
-                ${props => props.type === 'materialDark' ? props.theme.materialBoxShadow : null}
-                ${props => props.type === 'regular' ? props.theme.regularBoxShadow : null}
+                ${props => props.type === 'materialDark' ? props.theme.materialBoxShadowHover : null}
+                ${props => props.type === 'regular' ? props.theme.regularBoxShadowHover : null}
             ;
-            background-color: 
-                ${props => props.type === 'materialDark' ? props.theme.materialCyan : null}
-                ${props => props.type === 'regular' ? props.theme.regularTitle : null}
-            ;
-            color:
-                ${props => props.type === 'materialDark' ? props.theme.materialGray : null}
-                ${props => props.type === 'regular' ? props.theme.regularBlack : null}
-            ;
-            &:hover {
-                box-shadow:
-                    ${props => props.type === 'materialDark' ? props.theme.materialBoxShadowHover : null}
-                    ${props => props.type === 'regular' ? props.theme.regularBoxShadowHover : null}
-                ;
-        }
-    `
+    }
+`
 
     return (
         <StyledDiv type={theme} >

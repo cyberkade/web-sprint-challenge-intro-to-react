@@ -8,8 +8,6 @@ const theme = {
 
     regular: '#f5f5f5',
         regularBlack: ' #1b1d22',
-        regularBoxShadow: ' 0px 0px 3px black',
-        regularBoxShadowHover: ' 0px 0px 10px black',
         regularTitle: '#585481',
         regularBrown: '#A1867F',
 

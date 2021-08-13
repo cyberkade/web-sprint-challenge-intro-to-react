@@ -17,13 +17,13 @@ const StyledDiv = styled.div`
     text-shadow: 1px 0px 5px 
     ${props => props.type === 'materialDark' ? 'black' : null}
     ${props => props.type === 'regular' ? 'white' : null}
-  ;
-  color:
-    ${props => props.type === 'materialDark' ? props.theme.materialGray : null}
-    ${props => props.type === 'regular' ? props.theme.regularBlack : null}
-  ;
-  font-size: 40px;
-}
+    ;
+    color:
+      ${props => props.type === 'materialDark' ? props.theme.materialGray : null}
+      ${props => props.type === 'regular' ? props.theme.regularBlack : null}
+    ;
+    font-size: 40px;
+  }
 `
 
 const StyledButton = styled.button`
@@ -62,10 +62,6 @@ const App = () => {
   }, [])
 
   const switchTheme = () => theme === 'materialDark' ? setTheme('regular') : setTheme('materialDark');
-
-  // Fetch characters from the API in an effect hook. Remember, anytime you have a 
-  // side effect in a component, you want to think about which state and/or props it should
-  // sync up with, if any.
 
   return (
     data && <StyledDiv type ={theme} >

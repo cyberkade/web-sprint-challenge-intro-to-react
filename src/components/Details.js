@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledDiv = styled.div`
-    width: 40%; height:30vh;
+    width: 100%; height:30vh;
     display: flex;
     flex-flow: row wrap;
     align-items: center;
@@ -11,14 +11,16 @@ const StyledDiv = styled.div`
         ${props => props.type === 'materialDark' ? props.theme.materialDark : null}
         ${props => props.type === 'regular' ? props.theme.regular : null}
     ;
-    
+
     color:
         ${props => props.type === 'materialDark' ? props.theme.materialGray : null}
         ${props => props.type === 'regular' ? props.theme.regularBlack : null}
     ;
 
     h3 {
-        margin: 0px 10px;
+        text-align: center;
+        width: 150px;
+        margin: 0px 70px;
     }
 `
 
