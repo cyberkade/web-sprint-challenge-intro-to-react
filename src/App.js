@@ -23,7 +23,6 @@ const StyledH1 = styled.h1`
 
 const App = () => {
   const [data, setData] = useState(null);
-  const [character, setCharacter] = useState(null);
   const [error, setError] = useState(null);
   const [theme, setTheme] = useState('materialDark');
 
@@ -32,8 +31,6 @@ const App = () => {
       .then( res => setData(res.data))
       .catch( err => setError(err))
   }, [])
-
-  const showCharacter = name => name === character ? setCharacter(null) : setCharacter(name);
 
   const switchTheme = () => theme === 'materialDark' ? setTheme('regular') : setTheme('materialDark');
 
@@ -45,7 +42,7 @@ const App = () => {
     data && <StyledDiv type ={theme} >
               {error && <h1>Oops, something unexpected happened! {error}</h1>}
               <StyledH1 type={theme} >REACT WARS</StyledH1>
-              {data.map( (item, index) => <Character showCharacter={showCharacter} key={index} character={character} type={theme} data={data} name={item.name} birthYear={item['birth_year']} height={item.height} gender={item.gender} mass={item.mass} hairColor={item.hair_color} skinColor={item.skin_color} eyeColor={item.eye_color} />)}
+              {data.map( (item, index) => <Character key={index} type={theme} data={data} name={item.name} birthYear={item['birth_year']} height={item.height} gender={item.gender} mass={item.mass} hairColor={item.hair_color} skinColor={item.skin_color} eyeColor={item.eye_color} />)}
             </StyledDiv>
   );
 }

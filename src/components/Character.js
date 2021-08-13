@@ -4,8 +4,18 @@ import Details from './Details';
 
 
 const Character = (props) => {
-    const {theme, data, name, height, hairColor, eyeColor, skinColor, birthYear, showCharacter, character, gender, mass} = props;
+    const {theme, data, name, height, hairColor, eyeColor, skinColor, birthYear, gender, mass} = props;
     const [detailsActive, IsDetailsActive] = useState(false);
+    const [character, setCharacter] = useState(null);
+
+    const showCharacter = name => {
+        name === character ? setCharacter(null) : setCharacter(name);
+
+    }
+
+    const ChangeActive = () => {
+        
+    }
 
     const StyledDiv = styled.div`
     width: 75vw; height: ${detailsActive ? '40vh': '10vh'};
